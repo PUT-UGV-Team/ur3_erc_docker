@@ -17,7 +17,7 @@ $ xhost +local:root
 
 or if you're concerned about security:
 ```sh
-$ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' <NAME>`
+$ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' ur_erc`
 ```
 
 Then, you can run command in running container:
