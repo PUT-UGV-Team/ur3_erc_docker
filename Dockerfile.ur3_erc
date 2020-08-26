@@ -29,6 +29,9 @@ RUN apt install ros-melodic-joy* -y
 #gripper
 RUN cd /catkin_ws/src && git clone -b erc_gripper https://github.com/kolaszko/ur_rg2_gripper.git
 
+#fr controller
+RUN cd /catkin_ws/src && git clone https://github.com/kolaszko/ur_fr_control.git
+
 #pip2
 RUN apt-get install -y python-pip
 
