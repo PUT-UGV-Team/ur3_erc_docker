@@ -30,7 +30,7 @@ Now you can run commands below in docker container.
 ## UR3 simulation with MoveIt! and gripper
 Simulation in Gazebo:
 ```sh 
-$ rosrun ur_gazebo ur3_erc_workcell.launch 
+$ roslaunch ur_gazebo ur3_erc_workcell.launch 
 ```
 MoveIt! Planner:
 ```sh 
@@ -48,7 +48,7 @@ Change in Displays bookmark *Global Options/Fixed Frame* to 'base_link'.
 
 Simulation in Gazebo:
 ```sh 
-$ rosrun ur_gazebo ur3_erc_workcell.launch
+$ roslaunch ur_gazebo ur3_erc_workcell.launch
 ```
 MoveIt! Planner:
 ```sh 
