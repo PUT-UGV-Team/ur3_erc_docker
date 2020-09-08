@@ -18,6 +18,10 @@ RUN cd /catkin_ws/src && git clone https://github.com/filesmuggler/universal_rob
 #ur_modern_driver
 RUN cd /catkin_ws/src && git clone -b kinetic-devel https://github.com/ros-industrial/ur_modern_driver.git
 
+RUN apt install ros-melodic-industrial-core -y
+
+RUN rosdep update
+
 RUN rosdep install --from-paths /catkin_ws/src/ --ignore-src --rosdistro melodic -r -y
 
 #teleop
@@ -33,11 +37,19 @@ RUN cd /catkin_ws/src && git clone -b erc_gripper https://github.com/kolaszko/ur
 RUN cd /catkin_ws/src && git clone https://github.com/kolaszko/ur_fr_control.git
 
 #pip2
-RUN apt-get install -y python-pip
+RUN apt install -y python-pip
+
+#pip3
+RUN apt install -y python3-pip
 
 #controller
 RUN cd /usr/share && git clone https://github.com/kolaszko/arm-lightweight-controller.git && cd /usr/share/arm-lightweight-controller && pip install .
 
+#realsense
+RUN apt install -y ros-melodic-realsense2-camera
+
+#usb cam
+RUN cd /catkin_ws/src && git clone https://github.com/ros-drivers/usb_cam.git
 
 #world
 RUN mkdir -p /root/.gazebo/models/workcell
